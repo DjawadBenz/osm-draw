@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSM x World Cup 2026 Draft</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Inspiration&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logos">
+                <img src="OnlineSoccerManager.png" alt="OSM Logo" class="logo-img osm-img">
+                <div class="x-container">
+                    <span class="x-mark">x</span>
+                    <span class="blida-text">blida</span>
+                </div>
+                <img src="tournaments_fifa-world-cup-2026_700x700.football-logos.cc.png" alt="WC 2026 Logo" class="logo-img wc-img">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Draft Area (Left) -->
+        <section class="draft-section">
+            <h2>Team Draft (قرعة)</h2>
+            <div class="input-group">
+                <input type="text" id="playerName" placeholder="Enter your name..." />
+                <button id="drawBtn">Submit / Draw</button>
+            </div>
+            
+            <div class="animation-box">
+                <div id="teamDisplay">
+                    <span id="teamNameDisplay">?</span>
+                    <img id="teamFlagDisplay" src="" alt="flag" style="display: none;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Draft Results Area (Right, Main Focus) -->
+        <section class="results-section">
+            <div class="card drafted-card">
+                <h3>Draft Results</h3>
+                <ul id="draftedList"></ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Small Available Teams Floating Area (Bottom Right) -->
+    <div class="small-available-teams">
+        <div class="available-header">
+            <h4>Available Teams (<span id="availableCount">0</span>)</h4>
+            <button id="toggleAvailableBtn" class="toggle-btn">Hide</button>
+        </div>
+        <div id="availableTeamsList" class="compact-list"></div>
+    </div>
+
+    <!-- Settings Button -->
+    <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Manage Teams</h2>
+                <button id="closeSettingsBtn" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="add-team-form">
+                    <input type="text" id="newTeamName" placeholder="Team Name (e.g. Canada)">
+                    <input type="text" id="newTeamFlag" placeholder="Flag Code (e.g. ca)">
+                    <button id="addTeamBtn">Add</button>
+                </div>
+                <p class="help-text">Find flag codes (e.g. "dz" for Algeria) at <a href="https://flagcdn.com" target="_blank">flagcdn.com</a></p>
+                <ul id="settingsTeamsList" class="settings-teams-list"></ul>
+                <button id="resetTeamsBtn" class="reset-btn">Reset to Default Teams & Clear Draft</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
